@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Link} from 'react-router-dom';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+import {Route} from 'react-router-dom';
+import Kontak from './komponen/Kontak';
+import Beranda from './komponen/Beranda';
+import ProfileClub from './komponen/ProfileClub';
+class App extends Component{
+  render(){
+    return(
+      <div>
+        <Link to={'/'}>
+        <h1>footballCLUB.com</h1>
+        </Link>
+        <div>
+          <Route exact path='/' component={Beranda}/>
+          {/* contoh statik route adalah /kontak */}
+          <Route path='/kontak' component={Kontak}/>
+          {/* contoh dinamic router adalah /:profileclub */}
+          <Route path='/team/:profileclub' component={ProfileClub}/>
+        </div>
       </div>
     );
   }
 }
-
 export default App;
