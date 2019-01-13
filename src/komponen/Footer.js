@@ -4,7 +4,7 @@ import './../css/Footer.css';
 class Footer extends Component{
     render(){
         return(
-            <footer>copyright 2018</footer>
+            <footer><i class="far fa-copyright">Putri Bella Safira P - 2018</i> </footer>
         );
     }
 }

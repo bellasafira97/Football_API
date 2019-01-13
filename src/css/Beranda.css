@@ -1,0 +1,8 @@
+.pilihan {
+    display: block;
+    margin: 0 auto;
+    padding-left: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(181, 209, 238);
+}

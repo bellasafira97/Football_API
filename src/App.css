@@ -18,6 +18,12 @@
   color: white;
 }
 
+h1{
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  margin-left: 30px;
+}
+
 .App-link {
   color: #61dafb;
 }

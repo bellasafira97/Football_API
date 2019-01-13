@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import '../css/Beranda.css'
 
 class Beranda extends Component{
       //state
@@ -13,9 +14,11 @@ class Beranda extends Component{
   }
     // componentDidMount() adalah untuk mengambil secara langsung API data
     componentDidMount(){
+        console.log(this.props)
         var url = 'https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?s=Soccer&c=Spain';
         axios.get(url)
         .then((x) => {
+            console.log(x.data.teams)
             this.setState({
                 klub: x.data.teams,
                 loading: '',
@@ -55,16 +58,16 @@ class Beranda extends Component{
             )
         })
         return(
-            <div>
-                <h4>Ini Beranda</h4>
-                <select className="mb-5" onChange={(e)=>{
+            <div className="App">
+                <h4>Silahkan lihat tim sepak bola favorit anda: </h4>
+                <select className="pilihan mb-5 btn-new" data-style="btn-new" onChange={(e)=>{
                     console.log(e.target.value);
                     this.opsiliga(e.target.value)
                     }
                 }>
-                    <option value='s=Soccer&c=spain'> Laliga Spanyol</option>
-                    <option value='l=English%20Premier%20League'> Premier Leage</option>
-                    <option value='l=German%20Bundesliga'> Laliga Spanyol</option>
+                    <option className="dropdown" value='s=Soccer&c=spain'> Laliga Spanyol</option>
+                    <option className="dropdown" value='l=English%20Premier%20League'> Premier Leage</option>
+                    <option className="dropdown" value='l=German%20Bundesliga'> Liga Eropa</option>
                 </select>
                 {this.state.loading}
                 <div className="container">
